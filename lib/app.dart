@@ -6,6 +6,9 @@ class taskManagerApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        colorSchemeSeed: Colors.green,
+      ),
       home: SplashScreen(),
     );
   }
