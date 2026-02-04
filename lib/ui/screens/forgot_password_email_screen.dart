@@ -2,9 +2,11 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:task_manager_app/ui/widgets/screen_background.dart';
 
+import 'forgot_password_verify_otp_screen.dart';
+
 class ForgotPasswordEmailScreen extends StatefulWidget {
   const ForgotPasswordEmailScreen({super.key});
-  static const String name = '/ ForgotPasswordEmailScreen';
+  static const String name = '/ForgotPasswordEmailScreen';
 
   @override
   State<ForgotPasswordEmailScreen> createState() =>
@@ -50,9 +52,11 @@ class _ForgotPasswordEmailScreenState extends State<ForgotPasswordEmailScreen> {
                   text: TextSpan(
                     style: TextStyle(
                       color: Colors.black,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 15,
+
                     ),
-                    text: "Have an account",
+                    text: "Have an account?",
                     children: [
                       TextSpan(
                         style: TextStyle(color: Colors.green),
@@ -72,6 +76,8 @@ class _ForgotPasswordEmailScreenState extends State<ForgotPasswordEmailScreen> {
   void _onTapSignInButton(){
     Navigator.pop(context);
   }
-  void _onTapSubmitButton(){}
+  void _onTapSubmitButton(){
+    Navigator.pushNamed(context,ForgotPasswordVerifyOtpScreen.name);
+  }
 
 }
