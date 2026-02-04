@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_manager_app/ui/screens/forgot_password_email_screen.dart';
 import 'package:task_manager_app/ui/screens/sign_in_screen.dart';
 import 'package:task_manager_app/ui/screens/sign_up_screen.dart';
 import 'package:task_manager_app/ui/screens/splash_screen.dart';
@@ -37,27 +38,29 @@ class taskManagerApp extends StatelessWidget {
           ),
         ),
         filledButtonTheme: FilledButtonThemeData(
-           style: FilledButton.styleFrom(
-        fixedSize: Size.fromWidth(double.maxFinite),
-        padding: EdgeInsets.symmetric(vertical: 12),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadiusGeometry.circular(8),
+          style: FilledButton.styleFrom(
+            fixedSize: Size.fromWidth(double.maxFinite),
+            padding: EdgeInsets.symmetric(vertical: 12),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadiusGeometry.circular(8),
+            ),
+            backgroundColor: Colors.green,
+            foregroundColor: Colors.white,
+          ),
         ),
-        backgroundColor: Colors.green,
-        foregroundColor: Colors.white,
-
+        textTheme: TextTheme(
+          titleLarge: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+          labelLarge: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: Colors.grey)
+        ),
       ),
 
-        )
-      ),
-
-      routes: <String,WidgetBuilder>{
-        SplashScreen.name:(_)=> SplashScreen(),
-        SignInScreen.name:(_)=> SignInScreen(),
-        SignUpScreen.name:(_)=> SignUpScreen(),
-
+      routes: <String, WidgetBuilder>{
+        SplashScreen.name: (_) => SplashScreen(),
+        SignInScreen.name: (_) => SignInScreen(),
+        SignUpScreen.name: (_) => SignUpScreen(),
+        ForgotPasswordEmailScreen.name:(_)=> ForgotPasswordEmailScreen(),
       },
-      initialRoute:  SplashScreen.name,
+      initialRoute: SplashScreen.name,
     );
   }
 }

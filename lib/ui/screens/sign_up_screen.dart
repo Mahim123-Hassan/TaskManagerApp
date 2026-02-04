@@ -22,7 +22,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             SizedBox(height: 70),
             Text(
               "Join With Us",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+              style: Theme.of(context).textTheme.titleLarge,
             ),
             SizedBox(height: 8),
             TextFormField(
