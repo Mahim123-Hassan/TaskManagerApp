@@ -43,7 +43,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               ),
               SizedBox(),
               FilledButton(
-                onPressed: _onTapSubmitButton,
+                onPressed:  _onTapConfirmButton,
                 child: Icon(Icons.arrow_circle_right_outlined),
               ),
               SizedBox(height: 24),
@@ -78,7 +78,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
     );
   }
 
-  void _onTapSubmitButton() {
+  void _onTapConfirmButton() {
     Navigator.pushNamed(context, ResetPasswordScreen.name);
   }
 }

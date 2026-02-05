@@ -4,6 +4,7 @@ import 'package:task_manager_app/ui/screens/sign_up_screen.dart';
 import 'package:task_manager_app/ui/widgets/screen_background.dart';
 
 import 'forgot_password_email_screen.dart';
+import 'main_bottom_nav_holder_screen.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -83,7 +84,9 @@ class _SignInScreenState extends State<SignInScreen> {
     );
   }
 
-  void _onTabSignInButton() {}
+  void _onTabSignInButton() {
+    Navigator.pushReplacementNamed(context, MainBottomNavHolderScreen.name);
+  }
   void _onTapForgotPasswordButton() {
     Navigator.pushNamed(context, ForgotPasswordEmailScreen.name);
   }

@@ -60,7 +60,7 @@ class _ForgotPasswordVerifyOtpScreenState
               ),
               SizedBox(height: 8),
               FilledButton(
-                onPressed: _onTabSubmitButton,
+                onPressed: _onTabVerifyButton,
                 child: Icon(Icons.arrow_circle_right_outlined),
               ),
               SizedBox(height: 24),
@@ -102,7 +102,7 @@ class _ForgotPasswordVerifyOtpScreenState
     );
   }
 
-  void _onTabSubmitButton() {
+  void _onTabVerifyButton() {
     Navigator.pushNamed(context, ResetPasswordScreen.name);
   }
 }
