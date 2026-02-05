@@ -1,36 +1,46 @@
 import 'package:flutter/material.dart';
+import 'package:task_manager_app/ui/screens/tm_app_bar.dart';
+
 class MainBottomNavHolderScreen extends StatefulWidget {
   const MainBottomNavHolderScreen({super.key});
-  static const String name="/MainBottomNavHolderScreen";
+  static const String name = "/MainBottomNavHolderScreen";
 
   @override
-  State<MainBottomNavHolderScreen> createState() => _MainBottomNavHolderScreenState();
+  State<MainBottomNavHolderScreen> createState() =>
+      _MainBottomNavHolderScreenState();
 }
 
 class _MainBottomNavHolderScreenState extends State<MainBottomNavHolderScreen> {
+
+  int _selectedIndex=0;
+
   @override
   Widget build(BuildContext context) {
-    final textThem = Theme.of(context).textTheme;
     return Scaffold(
-      appBar:AppBar(
-        backgroundColor: Colors.green,
-        title: Row(
-          spacing: 12,
-          children: [
-            CircleAvatar(),
-            Column(
-              crossAxisAlignment: .start,
-              children: [
-                Text("Mahim Hassan",style: textThem.bodyLarge?.copyWith(
-                  fontWeight: FontWeight.w600,color: Colors.white,
-                )),
-                Text("hmahim951@gmail.comn",style: textThem.bodyMedium?.copyWith(
-                  color: Colors.white,
-                ))
-              ],
-            )
-          ],
-        ),
+      appBar: TMAppBar(textTheme: TextTheme()),
+      bottomNavigationBar: NavigationBar(
+        selectedIndex: _selectedIndex,
+        onDestinationSelected: (int index){
+          _selectedIndex=index;
+          setState(() {
+
+          });
+        },
+        destinations: [
+          NavigationDestination(
+            icon: Icon(Icons.access_time),
+            label: "progress",
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.new_label_outlined),
+            label: "New",
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.cancel_outlined),
+            label: "Cancelled",
+          ),
+          NavigationDestination(icon: Icon(Icons.done), label: "Completed"),
+        ],
       ),
     );
   }
