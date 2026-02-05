@@ -55,6 +55,7 @@ class taskManagerApp extends StatelessWidget {
           titleLarge: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
           labelLarge: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: Colors.grey)
         ),
+        scaffoldBackgroundColor: Colors.green.shade50,
       ),
 
       routes: <String, WidgetBuilder>{

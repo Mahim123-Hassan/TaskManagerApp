@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_manager_app/ui/screens/new_task_list_screen.dart';
 import 'package:task_manager_app/ui/screens/tm_app_bar.dart';
 
 class MainBottomNavHolderScreen extends StatefulWidget {
@@ -11,20 +12,26 @@ class MainBottomNavHolderScreen extends StatefulWidget {
 }
 
 class _MainBottomNavHolderScreenState extends State<MainBottomNavHolderScreen> {
-
-  int _selectedIndex=0;
+  int _selectedIndex = 0;
+  final List<Widget> _screen=[
+    NewTaskListScreen(),
+    NewTaskListScreen(),
+    NewTaskListScreen(),
+    NewTaskListScreen(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: TMAppBar(textTheme: TextTheme()),
+      appBar: TMAppBar(textTheme: TextTheme(),
+
+      ),
+      body: _screen[_selectedIndex],
       bottomNavigationBar: NavigationBar(
         selectedIndex: _selectedIndex,
-        onDestinationSelected: (int index){
-          _selectedIndex=index;
-          setState(() {
-
-          });
+        onDestinationSelected: (int index) {
+          _selectedIndex = index;
+          setState(() {});
         },
         destinations: [
           NavigationDestination(
