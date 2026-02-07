@@ -20,7 +20,7 @@ class _NewTaskListScreenState extends State<NewTaskListScreen> {
             SizedBox(),
             TaskSamarry(),
             SizedBox(),
-             TaskCard(),
+            TaskCard(),
             ListView.separated(
               itemCount: 10,
               primary: false,
@@ -36,8 +36,10 @@ class _NewTaskListScreenState extends State<NewTaskListScreen> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+      ),
     );
   }
 }
-
-
